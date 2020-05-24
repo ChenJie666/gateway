@@ -33,7 +33,7 @@ public class CrossDomainConfig {
         return new CorsWebFilter(source);
     }
 
-    //两种方式任选其一即可
+    //方式二
 //    @Bean
 //    public WebMvcConfigurer corsConfigurer() {
 //        return new WebMvcConfigurer() {
@@ -48,5 +48,17 @@ public class CrossDomainConfig {
 //            }
 //        };
 //    }
+
+    //方式三：通过配置文件配置
+    /**
+     *     spring:
+     *     cloud:
+     *     gateway:
+     *     globalcors:
+     *     corsConfigurations:
+     *             '[/**]':
+     *     allowedOrigins: "*"
+     *     allowedMethods: "*"
+     */
 
 }
